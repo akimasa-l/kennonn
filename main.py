@@ -1,5 +1,9 @@
 from selenium import webdriver
 from selenium.webdriver.common.keys import Keys
+from selenium.webdriver.support.ui import WebDriverWait
+from selenium.webdriver.support import expected_conditions
+from selenium.webdriver.common.by import By
+
 driver = webdriver.Chrome(executable_path="/usr/lib/chromium-browser/chromedriver")
 url="https://docs.google.com/forms/d/e/1FAIpQLSco7LzMebv1ctlOFOvWOZEkd7XAzeNt85bfXawibNDr52ZBNg/viewform"
 driver.get(url)
@@ -9,7 +13,9 @@ with open("./password.txt") as f:
 email=driver.find_element_by_css_selector("#identifierId")
 email.send_keys(username)
 email.send_keys(Keys.ENTER)
-password_element=driver.find_element_by_css_selector("#password")
+wait=WebDriverWait.wait(10)
+wait.until(expected_conditions.presence_of_element_located((By.css_selector,"input[name=\"password\"]")))
+password_element=driver.find_element_by_css_selector("input[name=\"password\"]")
 password_element.send_keys(password)
 email.send_keys(Keys.ENTER)
 element=driver.find_element_by_css_selector("input")

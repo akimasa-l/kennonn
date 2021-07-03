@@ -18,6 +18,7 @@ wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR,"inp
 password_element=driver.find_element_by_css_selector("input[name=\"password\"]")
 password_element.send_keys(password)
 email.send_keys(Keys.ENTER)
+wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR,"span.freebirdFormviewerViewHeaderEmailAddress")))
 element=driver.find_element_by_css_selector("input")
 element.send_keys(Keys.TAB)
 element.send_keys(Keys.TAB)

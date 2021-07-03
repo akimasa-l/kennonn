@@ -24,5 +24,3 @@ wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR,"spa
 send_button=driver.find_element_by_css_selector("div[role=\"button\"]")
 send_button.click()
 
-driver.close
-driver.quit

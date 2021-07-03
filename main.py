@@ -23,4 +23,7 @@ password_element.send_keys(Keys.ENTER)
 wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR,"span.freebirdFormviewerViewHeaderEmailAddress")))#読み込まれるまで待つ
 send_button=driver.find_element_by_css_selector("div[role=\"button\"]")
 send_button.click()
+wait.until(expected_conditions.presence_of_element_located((By.CSS_SELECTOR,"div.freebirdFormviewerViewResponseConfirmationMessage")))
 
+driver.close()
+driver.quit()

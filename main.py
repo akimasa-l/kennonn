@@ -13,7 +13,7 @@ with open("./password.txt") as f:
 email=driver.find_element_by_css_selector("#identifierId")
 email.send_keys(username)
 email.send_keys(Keys.ENTER)
-wait=webdriver.wait(10)
+wait=WebDriverWait(driver,10)
 wait.until(expected_conditions.presence_of_element_located((By.css_selector,"input[name=\"password\"]")))
 password_element=driver.find_element_by_css_selector("input[name=\"password\"]")
 password_element.send_keys(password)

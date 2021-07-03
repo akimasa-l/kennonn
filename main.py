@@ -9,7 +9,7 @@ with open("./password.txt") as f:
 email=driver.find_element_by_css_selector("#identifierId")
 email.send_keys(username)
 email.send_keys(Keys.ENTER)
-password_element=driver.find_element_by_css_selector("input")
+password_element=driver.find_element_by_css_selector("#password")
 password_element.send_keys(password)
 email.send_keys(Keys.ENTER)
 element=driver.find_element_by_css_selector("input")

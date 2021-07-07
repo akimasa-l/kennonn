@@ -20,7 +20,7 @@ with open("./password.txt") as f:
 email = driver.find_element_by_css_selector("#identifierId")
 email.send_keys(username)
 email.send_keys(Keys.ENTER)
-wait = driver.WebDriverWait(10)#waitインスタンスを作る
+wait = WebDriverWait(driver, 10)  # waitインスタンスを作る
 wait.until(expected_conditions.presence_of_element_located(
     (By.CSS_SELECTOR, "input[name=\"password\"]")))  # パスワードの画面が読み込まれるまで待つ
 password_element = driver.find_element_by_css_selector(
